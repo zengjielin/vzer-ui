@@ -8,9 +8,9 @@ npm install vzer-ui --save-dev
 
 #项目中引入
 import Vue from 'vue'
-import VZer from 'vzer-ui'
-import 'vzer-ui/lib/yw.css'
-Vue.use(VZer)
+import Vzer from 'vzer-ui'
+import 'vzer-ui/lib/vzer.css'
+Vue.use(Vzer)
 
 #使用组件示例
 <vzer-button>default</vzer-button>

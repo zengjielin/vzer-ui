@@ -1,11 +1,11 @@
 var path = require('path')
 var webpack = require('webpack')
-const ExtractTextPlugin = require ('extract-text-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
     style: './src/plugin/style.js',
-    vzer: './src/plugin/index.js',
+    vzer: './src/plugin/index.js',//出口文件(vzer.js)必须与pakage.json中的main相同；
   },
   output: {
     path: path.resolve(__dirname, './lib'),
@@ -15,8 +15,7 @@ module.exports = {
     libraryTarget: 'umd'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: [
           'vue-style-loader',
@@ -34,8 +33,7 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          loaders: {
-          }
+          loaders: {}
           // other vue-loader options go here
         }
       },
@@ -75,7 +73,9 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
-    new ExtractTextPlugin("vzer.css",{allChunks: true}),
+    new ExtractTextPlugin("vzer.css", {
+      allChunks: true
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
