@@ -1,18 +1,30 @@
 # vzer-ui
 
-> A Vue.js project
-
 ## Build Setup
 
 ``` bash
-# install dependencies
+#npm安装
+npm install vzer-ui --save-dev
+
+#项目中引入
+import Vue from 'vue'
+import VZer from 'vzer-ui'
+import 'vzer-ui/lib/yw.css'
+Vue.use(VZer)
+
+#使用组件示例
+<yw-button>default</yw-button>
+<yw-button type="success">success</yw-button>
+<yw-button type="error">error</yw-button>
+<yw-button type="warning">warning</yw-button>
+<yw-button type="info" style="min-width:120px">info</yw-button>
+
+#本地运行
 npm install
-
-# serve with hot reload at localhost:8080
 npm run dev
-
-# build for production with minification
-npm run build
+#打包web服务命令
+npm run build 
+#打包npm包命令
+npm run package
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).

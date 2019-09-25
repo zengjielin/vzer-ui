@@ -5,13 +5,13 @@ const ExtractTextPlugin = require ('extract-text-webpack-plugin')
 module.exports = {
   entry: {
     style: './src/style.js',
-    yw: './src/index.js',
+    vzer: './src/index.js',
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, './lib'),
+    publicPath: '/lib/',
     filename: '[name].js',
-    library: 'Yw',
+    library: 'vzer',
     libraryTarget: 'umd'
   },
   module: {
@@ -75,7 +75,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
-    new ExtractTextPlugin("yw.css",{allChunks: true}),
+    new ExtractTextPlugin("vzer.css",{allChunks: true}),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'

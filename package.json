@@ -3,12 +3,13 @@
   "description": "A Vue.js project",
   "version": "1.0.1",
   "author": "zengjielin <248717607@qq.com>",
-  "main": "dist/yw.js",
+  "main": "dist/vzer.js",
   "license": "MIT",
   "private": false,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --config webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config webpack.config.js"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config webpack.dev.js",
+    "package": "cross-env NODE_ENV=production webpack --progress --hide-modules --config webpack.config.js"
   },
   "dependencies": {
     "vue": "^2.5.11"
