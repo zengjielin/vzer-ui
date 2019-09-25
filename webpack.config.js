@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
   entry: {
     style: './src/plugin/style.js',
-    vzer: './src/plugin/index.js',//出口文件(vzer.js)必须与pakage.json中的main相同；
+    vzer: './src/plugin/index.js', //出口文件(vzer.js)必须与pakage.json中的main相同；
   },
   output: {
     path: path.resolve(__dirname, './lib'),
@@ -48,7 +48,14 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
-      }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+        }
+      },
     ]
   },
   resolve: {
@@ -82,7 +89,7 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+      sourceMap: false,
       compress: {
         warnings: false
       }
