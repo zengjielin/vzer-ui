@@ -1,7 +1,7 @@
 {
   "name": "vzer-ui",
   "description": "A Vue.js project",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "author": "zengjielin <248717607@qq.com>",
   "main": "dist/vzer.js",
   "license": "MIT",

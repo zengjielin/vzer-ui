@@ -4,8 +4,8 @@ const ExtractTextPlugin = require ('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    style: './src/style.js',
-    vzer: './src/index.js',
+    style: './src/plugin/style.js',
+    vzer: './src/plugin/index.js',
   },
   output: {
     path: path.resolve(__dirname, './lib'),

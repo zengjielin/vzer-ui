@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import '@/assets/index.scss'
-import YwVue from '@'
-Vue.use(YwVue)
+import '@/plugin/assets/scss/index.scss'
+import Vzer from '@/plugin'
+Vue.use(Vzer)
 
 new Vue({
   el: '#app',
