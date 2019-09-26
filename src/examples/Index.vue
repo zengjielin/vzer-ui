@@ -1,27 +1,33 @@
 <template>
-    <div class="example-index">
-        <div class="example-header-wrapper">
-            <div class="frame-info">
-                <div class="freme-logo">
-                    <img src="@/assets/img/logo.png" alt="" srcset="">
-                </div>
-                <div class="freme-name">Vzer</div>
-            </div>
-            <div class="frame-intro">轻量、可靠的移动端Vue组件库</div>
+  <div class="example-index">
+    <div class="example-header-wrapper">
+      <div class="frame-info">
+        <div class="freme-logo">
+          <img src="@/assets/img/logo.png" alt="" srcset="">
         </div>
-        <div class="example-component-list-wrapepr">
-            <div class="example-component-item-wrapper" v-for="i in 13" :key="i">
-                <div>
-                    <img src="@/assets/img/btn.png" alt="">
-                </div>
-                <div class="example-component-name">按钮</div>
-            </div>
-        </div>
+        <div class="freme-name">Vzer</div>
+      </div>
+      <div class="frame-intro">轻量、可靠的移动端Vue组件库</div>
     </div>
+    <div class="example-component-list-wrapepr">
+      <div class="example-component-item-wrapper" @click="gotoButtonPage">
+        <div>
+          <img src="@/assets/img/btn.png" alt="">
+        </div>
+        <div class="example-component-name">按钮</div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    gotoButtonPage() {
+      this.$router.push({ name: "Button" });
+    }
+  }
+};
 </script>
 
 <style lang='scss'>
