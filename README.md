@@ -1,4 +1,6 @@
 # vzer-ui
+## 点击下方查看demo
+[在线演示地址](https://zengjielin.github.io/vzer-ui/dist/#/)
 
 ## Build Setup
 
@@ -12,9 +14,6 @@ import Vzer from 'vzer-ui'
 import 'vzer-ui/lib/vzer.css'
 Vue.use(Vzer)
 
-
-[在线演示地址](https://zengjielin.github.io/vzer-ui/dist/#/)
-
 #组件使用示例
 <vzer-button>默认按钮</vzer-button>
 <vzer-button type="primary">主要按钮</vzer-button>
@@ -23,8 +22,14 @@ Vue.use(Vzer)
 <vzer-button type="warning">警告按钮</vzer-button>
 <vzer-button type="error">错误按钮</vzer-button>
 
-#本地运行
+#在本地运行
+#克隆项目到本地
+git clone https://github.com/zengjielin/vzer-ui.git
+#进入项目
+cd vzer-ui
+#安装
 npm install
+#运行项目
 npm run dev
 #打包web服务命令
 npm run build 
