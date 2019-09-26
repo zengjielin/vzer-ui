@@ -1,5 +1,7 @@
 <template>
-    <div class="example-button">example-button</div>
+    <div class="example-button">example-button
+        <img src="@/assets/img/btn.png" alt="" srcset="">
+    </div>
 </template>
 
 <script>
