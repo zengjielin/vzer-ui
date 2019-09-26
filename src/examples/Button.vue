@@ -1,6 +1,6 @@
 <template>
-    <div class="example-button">example-button
-        <img src="@/assets/img/btn.png" alt="" srcset="">
+    <div class="example-button">
+        
     </div>
 </template>
 
