@@ -12,11 +12,16 @@ import Vzer from 'vzer-ui'
 import 'vzer-ui/lib/vzer.css'
 Vue.use(Vzer)
 
-#使用组件示例
-<vzer-button>default</vzer-button>
-<vzer-button type="success">success</vzer-button>
-<vzer-button type="error">error</vzer-button>
-<vzer-button type="warning">warning</vzer-button>
+
+[在线演示地址](https://zengjielin.github.io/vzer-ui/dist/#/)
+
+#组件使用示例
+<vzer-button>默认按钮</vzer-button>
+<vzer-button type="primary">主要按钮</vzer-button>
+<vzer-button type="success">成功按钮</vzer-button>
+<vzer-button type="info">信息按钮</vzer-button>
+<vzer-button type="warning">警告按钮</vzer-button>
+<vzer-button type="error">错误按钮</vzer-button>
 
 #本地运行
 npm install
