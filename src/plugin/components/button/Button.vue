@@ -10,7 +10,7 @@ export default {
   display: "Button按钮",
   data() {
     return {
-      preCls: "yw-btn"
+      preCls: "vzer-btn"
     };
   },
   props: {
@@ -23,7 +23,7 @@ export default {
       type: String,
       default: "default", //['default',success', 'warning', 'error', 'info']
       validator(value) {
-        let types = ["default", "success", "warning", "error", "info"];
+        let types = ["default","primary", "success", "warning", "error", "info"];
         return types.includes(value) || !value;
       }
     },

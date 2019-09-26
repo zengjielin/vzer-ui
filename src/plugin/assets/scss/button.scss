@@ -1,8 +1,9 @@
-$success: #20d08c;
-$error: #e91a1a;
-$warning: #ffb200;
-$info: #005ff1;
 $default: #ddd;
+$primary: #e36789;
+$success: #6fb7c6;
+$info: #ed7ab5;
+$warning: #f2a727;
+$error: #d9534f;
 $white: #fff;
 
 @mixin btn-type($color, $bgColor) {
@@ -34,7 +35,7 @@ $white: #fff;
 }
 
 // &替换父选择器,#{}插值
-.yw-btn {
+.vzer-btn {
   display: inline-block;
   text-align: center;
   cursor: pointer;
@@ -45,6 +46,7 @@ $white: #fff;
   height: 32px;
   border-radius: 4px;
   outline: none;
+  margin: 5px;
 
   &:disabled {
     color: #999;
@@ -54,10 +56,14 @@ $white: #fff;
   }
 
   &-default {
-    color: #333;
-    border-color: #ddd;
-    background: #fff;
+    @include btn-type($default, $default);
+    color: #606266;
+    background: #FFF;
     font-weight: 400;
+  }
+
+  &-primary {
+    @include btn-type($primary, $primary);
   }
 
   &-success {
