@@ -1,8 +1,14 @@
-### vzer-ui是一款轻量、可靠的移动端Vue组件库
-## 点击下方查看demo
+# vzer-ui是一款轻量、可靠的移动端Vue组件库
+
+###项目持续更新维护，喜欢的可以给个star
+
+###github地址
+[在线演示地址](https://github.com/zengjielin/vzer-ui)
+
+### 点击下方查看demo
 [在线演示地址](https://zengjielin.github.io/vzer-ui/dist/#/)
 
-## 快速入门教程
+### 快速入门教程
 
 ``` bash
 #npm安装
