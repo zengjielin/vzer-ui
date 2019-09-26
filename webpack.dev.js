@@ -1,21 +1,26 @@
 var path = require('path')
 var webpack = require('webpack')
 var htmlWebpackPlugin = require('html-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+//使用插件html-webpack-plugin打包合并html
+//使用插件extract-text-webpack-plugin打包独立的css
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: '[name].js',
+    // publicPath: '/dist/',
+    publicPath: process.env.NODE_ENV === 'production' ? './' : './',
+    filename: 'js/app.[hash].js',
   },
   module: {
     rules: [{
         test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ],
+        use: ExtractTextPlugin.extract({
+          fallback: "vue-style-loader",
+          use: "css-loader"
+        })
       },
       {
         test: /\.scss$/,
@@ -42,7 +47,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          name: ('img/app.[hash:7].[ext]')
         }
       },
       {
@@ -50,6 +55,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
+          name: ('fonts/app.[hash:7].[ext]')
         }
       },
     ]
@@ -94,6 +100,10 @@ if (process.env.NODE_ENV === 'production') {
       filename: 'index.html',
       template: 'index.html',
       inject: 'true'
-    })
+    }),
+    new ExtractTextPlugin({
+      filename: 'css/app.[contenthash].css',
+      allChunks: true,
+    }),
   ])
 }
