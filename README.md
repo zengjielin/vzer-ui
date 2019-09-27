@@ -3,7 +3,7 @@
 ###项目持续更新维护，喜欢的可以给个star
 
 ###github地址
-[gitbub地址](https://github.com/zengjielin/vzer-ui)
+[https://github.com/zengjielin/vzer-ui](https://github.com/zengjielin/vzer-ui)
 
 ### 点击下方查看demo
 [在线演示地址](https://zengjielin.github.io/vzer-ui/dist/#/)
