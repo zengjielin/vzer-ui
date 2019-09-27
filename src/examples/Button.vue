@@ -11,6 +11,29 @@
                 <vzer-button type="error">错误按钮</vzer-button>
             </div>
         </div>
+        <div class="example-button-type">
+            <div class="example-button-title">按钮大小</div>
+            <div class="example-button-list">
+                <vzer-button type="primary">普通按钮</vzer-button>
+                <vzer-button type="primary" size="large">大号按钮</vzer-button>
+                <vzer-button type="primary" size="medium">中等按钮</vzer-button>
+                <vzer-button type="primary" size="small">小号按钮</vzer-button>
+            </div>
+        </div>
+        <div class="example-button-type">
+            <div class="example-button-title">按钮形状</div>
+            <div class="example-button-list">
+                <vzer-button type="primary">普通按钮</vzer-button>
+                <vzer-button type="primary" shape="rectangle">直角按钮</vzer-button>
+                <vzer-button type="primary" shape="circle">圆角按钮</vzer-button>
+            </div>
+        </div>
+        <div class="example-button-type">
+            <div class="example-button-title">禁用状态</div>
+            <div class="example-button-list">
+                <vzer-button type="primary" :disabled="true">禁用按钮</vzer-button>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -20,9 +43,9 @@ export default {};
 
 <style lang='scss'>
 .example-button {
-  padding: 0 20px;
+  padding: 10px 20px;
   .example-button-type {
-    padding: 20px 0;
+    padding-top: 10px;
     .example-button-title {
       padding-bottom: 10px;
       color: rgba(69, 90, 100, 0.6);
@@ -31,6 +54,9 @@ export default {};
     }
   }
   .example-button-list {
+    .vzer-btn {
+      margin: 0 10px 10px 0;
+    }
   }
 }
 </style>

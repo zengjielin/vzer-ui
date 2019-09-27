@@ -1,9 +1,9 @@
 $default: #ddd;
-$primary: #e36789;
+$primary: #25c6fc;
 $success: #6fb7c6;
 $info: #ed7ab5;
-$warning: #f2a727;
-$error: #d9534f;
+$warning: #ff534d;
+$error: #e03636;
 $white: #fff;
 
 @mixin btn-type($color, $bgColor) {
@@ -46,7 +46,6 @@ $white: #fff;
   height: 32px;
   border-radius: 4px;
   outline: none;
-  margin: 5px;
 
   &:disabled {
     color: #999;

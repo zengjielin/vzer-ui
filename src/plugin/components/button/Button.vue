@@ -1,5 +1,5 @@
 <template>
-    <button @click="clickBtn" :class="classBtn" :disabled="isDisabled">
+    <button @click="clickBtn" :class="classBtn" :disabled="disabled">
         <slot></slot>
     </button>
 </template>
@@ -14,7 +14,7 @@ export default {
     };
   },
   props: {
-    isDisabled: Boolean,
+    disabled: Boolean,
     shape: {
       type: String,
       default: "" //'circle'圆角, 'rectangle'直角
