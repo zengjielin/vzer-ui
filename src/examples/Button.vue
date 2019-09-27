@@ -54,7 +54,7 @@ export default {};
     }
   }
   .example-button-list {
-    .vzer-btn {
+    .vzer-button {
       margin: 0 10px 10px 0;
     }
   }

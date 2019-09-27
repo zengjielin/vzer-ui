@@ -10,7 +10,7 @@ export default {
   display: "Button按钮",
   data() {
     return {
-      preCls: "vzer-btn"
+      preCls: "vzer-button"
     };
   },
   props: {
