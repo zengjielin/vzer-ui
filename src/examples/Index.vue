@@ -9,6 +9,16 @@
       </div>
       <div class="frame-intro">轻量、可靠的移动端Vue组件库</div>
     </div>
+    <div class="example-header-title">基础组件</div>
+    <div class="example-component-list-wrapepr">
+      <div class="example-component-item-wrapper" @click="gotoButtonPage">
+        <div>
+          <img src="@/assets/img/btn.png" alt="">
+        </div>
+        <div class="example-component-name">按钮</div>
+      </div>
+    </div>
+    <div class="example-header-title">表单组件</div>
     <div class="example-component-list-wrapepr">
       <div class="example-component-item-wrapper" @click="gotoButtonPage">
         <div>
@@ -60,6 +70,12 @@ export default {
       color: #7d7e80;
       font-size: 14px;
     }
+  }
+  .example-header-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #7d7e80;
+    padding: 30px 30px 0px;
   }
   .example-component-list-wrapepr {
     display: flex;

@@ -20,7 +20,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background: #f8f8f8;
   box-sizing: border-box;
   position: relative;
