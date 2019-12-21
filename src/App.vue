@@ -15,8 +15,8 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: "PingFang SC", "Rajdhani-Medium", "Avenir", Helvetica, Arial,
-    sans-serif;
+  font-family: "Roboto-Regular", "PingFang SC", "Rajdhani-Medium", "Avenir",
+    Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;

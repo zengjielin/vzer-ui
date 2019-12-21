@@ -1,10 +1,4 @@
-$default: #ddd;
-$primary: #25c6fc;
-$success: #6fb7c6;
-$info: #ed7ab5;
-$warning: #ff534d;
-$error: #e03636;
-$white: #fff;
+@import './theme.scss';
 
 @mixin btn-type($color, $bgColor) {
   color: #fff;

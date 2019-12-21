@@ -1,34 +1,37 @@
 var path = require('path')
 var webpack = require('webpack')
-var htmlWebpackPlugin = require('html-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-//使用插件html-webpack-plugin打包合并html
-//使用插件extract-text-webpack-plugin打包独立的css
+function resolve(dir) {
+  return path.join(__dirname, '..', dir)
+}
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+    style: './src/plugin/style.js',
+    vzer: './src/plugin/index.js', //出口文件(vzer.js)必须与pakage.json中的main相同；
+  },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    // publicPath: '/dist/',
-    publicPath: process.env.NODE_ENV === 'production' ? './' : './',
-    filename: 'js/app.[hash].js',
+    path: resolve("lib"),
+    publicPath: '/lib/',
+    filename: '[name].js',
+    library: 'vzer',
+    libraryTarget: 'umd'
   },
   module: {
     rules: [{
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "vue-style-loader",
-          use: "css-loader"
-        })
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ],
       },
       {
         test: /\.scss$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader'
-        ],
+        use: ExtractTextPlugin.extract({
+          fallback: 'vue-style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
       },
       {
         test: /\.vue$/,
@@ -47,7 +50,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: ('img/app.[hash:7].[ext]')
+          name: '[name].[ext]?[hash]'
         }
       },
       {
@@ -55,7 +58,6 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: ('fonts/app.[hash:7].[ext]')
         }
       },
     ]
@@ -63,7 +65,7 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': path.resolve(__dirname, './src')
+      '@': resolve("lib")
     },
     extensions: ['*', '.js', '.vue', '.json']
   },
@@ -82,6 +84,9 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
+    new ExtractTextPlugin("vzer.css", {
+      allChunks: true
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
@@ -95,15 +100,6 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    }),
-    new htmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: 'true'
-    }),
-    new ExtractTextPlugin({
-      filename: 'css/app.[contenthash].css',
-      allChunks: true,
-    }),
+    })
   ])
 }

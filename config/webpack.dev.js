@@ -1,7 +1,12 @@
 var path = require('path')
 var webpack = require('webpack')
 
+function resolve(dir) {
+  return path.join(__dirname, '..', dir)
+}
+
 module.exports = {
+  context: path.resolve(__dirname, '../'),
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -60,7 +65,7 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': path.resolve(__dirname, './src')
+      '@': resolve('src')
     },
     extensions: ['*', '.js', '.vue', '.json']
   },

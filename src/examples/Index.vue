@@ -11,21 +11,21 @@
     </div>
     <div class="example-header-title">基础组件</div>
     <div class="example-component-list-wrapepr">
-      <div class="example-component-item-wrapper" @click="gotoButtonPage">
+      <routerLink to="/example_button" class="example-component-item-wrapper" @click="gotoButtonPage">
         <div>
           <img src="@/assets/img/btn.png" alt="">
         </div>
         <div class="example-component-name">按钮</div>
-      </div>
+      </routerLink>
     </div>
     <div class="example-header-title">表单组件</div>
     <div class="example-component-list-wrapepr">
-      <div class="example-component-item-wrapper" @click="gotoButtonPage">
+      <routerLink to="/example_checkbox" class="example-component-item-wrapper">
         <div>
-          <img src="@/assets/img/btn.png" alt="">
+            <img src="@/assets/img/btn.png" alt="">
         </div>
-        <div class="example-component-name">按钮</div>
-      </div>
+        <div class="example-component-name">多选</div>
+      </routerLink>
     </div>
   </div>
 </template>
