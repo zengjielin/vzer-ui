@@ -24,7 +24,13 @@
         <div>
             <img src="@/assets/img/btn.png" alt="">
         </div>
-        <div class="example-component-name">多选</div>
+        <div class="example-component-name">多选框</div>
+      </routerLink>
+      <routerLink to="/example_checkbox_group" class="example-component-item-wrapper">
+        <div>
+            <img src="@/assets/img/btn.png" alt="">
+        </div>
+        <div class="example-component-name">多选框组</div>
       </routerLink>
     </div>
   </div>

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from "@/examples/Index"
 import Button from "@/examples/Button"
 import Checkbox from "@/examples/Checkbox"
+import CheckboxGroup from "@/examples/CheckboxGroup"
 
 Vue.use(Router)
 
@@ -23,5 +24,9 @@ export default new Router({
     path: '/example_checkbox',
     name: 'Checkbox',
     component: Checkbox
+  }, {
+    path: '/example_checkbox_group',
+    name: 'CheckboxGroup',
+    component: CheckboxGroup
   }]
 })
