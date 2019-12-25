@@ -74,12 +74,6 @@ export default {
       checked: true,
       nochecked: false
     };
-  },
-  methods: {},
-  watch: {
-    checked(data) {
-      console.log(data);
-    }
   }
 };
 </script>

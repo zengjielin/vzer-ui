@@ -1,13 +1,48 @@
 <template>
-    <div>
-        <vzer-checkbox :width="30" normal-color="#ddd">选项一</vzer-checkbox>
-        <vzer-checkbox :width="30" normal-color="#ddd">选项二</vzer-checkbox>
-        <vzer-checkbox :width="30" normal-color="#ddd">选项三</vzer-checkbox>
-    </div>
+  <div @click="changeCheckboxGroup">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "CheckboxGroup",
+  componentName: "CheckboxGroup",
+  data() {
+    return {};
+  },
+  props: {
+    value: {
+      type: Array,
+      default: []
+    }
+  },
+  methods: {
+    handleChange() {
+      let checkedList = [];
+      this.$children.map(v => {
+        if (v.checked && v.label) {
+          checkedList.push(v.label);
+        }
+      });
+      this.$emit("input", checkedList);
+    },
+    changeCheckboxGroup() {
+      this.$emit("change", this.value);
+    }
+  },
+  created() {
+    this.$nextTick(() => {
+      this.$children.map(v => {
+        this.value.map(c => {
+          if (c == v.label) {
+            v.checked = true;
+          }
+        });
+      });
+    });
+  }
+};
 </script>
 
 <style>
