@@ -22,13 +22,13 @@
     <div class="example-component-list-wrapepr">
       <routerLink to="/example_checkbox" class="example-component-item-wrapper">
         <div>
-            <img src="@/assets/img/btn.png" alt="">
+          <img src="@/assets/img/checkbox.png" alt="">
         </div>
         <div class="example-component-name">多选框</div>
       </routerLink>
       <routerLink to="/example_checkbox_group" class="example-component-item-wrapper">
         <div>
-            <img src="@/assets/img/btn.png" alt="">
+          <img src="@/assets/img/checkbox_group.png" alt="">
         </div>
         <div class="example-component-name">多选框组</div>
       </routerLink>
@@ -77,7 +77,7 @@ export default {
       font-size: 14px;
     }
   }
-  .example-header-title{
+  .example-header-title {
     font-size: 20px;
     font-weight: 600;
     color: #7d7e80;

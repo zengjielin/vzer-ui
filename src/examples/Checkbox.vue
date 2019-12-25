@@ -10,7 +10,7 @@
     <div class="example-checkbox-type">
       <div class="example-checkbox-title">自定义尺寸</div>
       <div class="example-checkbox-list">
-        <vzer-checkbox v-model="checked" :width="20" background-color="#25c6fc"></vzer-checkbox>
+        <vzer-checkbox v-model="checked" :width="20" background-color="#25c6fc" normal-color="#000"></vzer-checkbox>
         <vzer-checkbox v-model="checked" :width="30" background-color="#6fb7c6"></vzer-checkbox>
         <vzer-checkbox v-model="checked" :width="40" background-color="#ed7ab5"></vzer-checkbox>
         <vzer-checkbox v-model="checked" :width="50" background-color="#ff534d"></vzer-checkbox>
