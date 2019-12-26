@@ -4,6 +4,7 @@ import Index from "@/examples/Index"
 import Button from "@/examples/Button"
 import Checkbox from "@/examples/Checkbox"
 import CheckboxGroup from "@/examples/CheckboxGroup"
+import Radio from "@/examples/Radio"
 
 Vue.use(Router)
 
@@ -28,5 +29,9 @@ export default new Router({
     path: '/example_checkbox_group',
     name: 'CheckboxGroup',
     component: CheckboxGroup
+  }, {
+    path: '/example_radio',
+    name: 'Radio',
+    component: Radio
   }]
 })

@@ -32,6 +32,12 @@
         </div>
         <div class="example-component-name">多选框组</div>
       </routerLink>
+      <routerLink to="/example_radio" class="example-component-item-wrapper">
+        <div>
+          <img src="@/assets/img/checkbox_group.png" alt="">
+        </div>
+        <div class="example-component-name">单选框</div>
+      </routerLink>
     </div>
   </div>
 </template>
