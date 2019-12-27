@@ -5,9 +5,8 @@
         <div class="freme-logo">
           <img src="@/assets/img/logo.png" alt="" srcset="">
         </div>
-        <div class="freme-name">Vzer</div>
+        <div class="frame-intro">轻量、可靠的移动端Vue组件库</div>
       </div>
-      <div class="frame-intro">轻量、可靠的移动端Vue组件库</div>
     </div>
     <div class="example-header-title">基础组件</div>
     <div class="example-component-list-wrapepr">
@@ -61,26 +60,20 @@ export default {
     box-sizing: border-box;
     .frame-info {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       padding-bottom: 10px;
       .freme-logo {
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
+        width: 223px;
+        height: 53px;
         img {
-          width: 50px;
-          height: 50px;
+          width: 223px;
+          height: 53px;
         }
       }
-      .freme-name {
-        margin-left: 10px;
-        font-weight: 600;
-        font-size: 50px;
+      .frame-intro {
+        color: #7d7e80;
+        font-size: 14px;
       }
-    }
-    .frame-intro {
-      color: #7d7e80;
-      font-size: 14px;
     }
   }
   .example-header-title {
