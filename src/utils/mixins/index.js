@@ -1,0 +1,5 @@
+const input = {},
+
+  export {
+    input
+  }

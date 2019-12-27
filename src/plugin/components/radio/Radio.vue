@@ -1,8 +1,12 @@
 <template>
-  <div class="radio-inside" @click="changeChecked($event)">
-    <svg t="1577322877646" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6020" :width="width" :height="width">
-      <path d="M512 1024C229.230208 1024 0 794.769792 0 512 0 229.230208 229.230208 0 512 0 794.769792 0 1024 229.230208 1024 512 1024 794.769792 794.769792 1024 512 1024ZM512 960C759.423565 960 960 759.423565 960 512 960 264.576432 759.423565 64 512 64 264.576432 64 64 264.576432 64 512 64 759.423565 264.576432 960 512 960ZM512 832C688.731117 832 832 688.731117 832 512 832 335.26888 688.731117 192 512 192 335.26888 192 192 335.26888 192 512 192 688.731117 335.26888 832 512 832Z" p-id="6021" :fill="fillColor"></path>
-    </svg>
+  <div class="vzer-radio">
+    <div class="vzer-radio-list" :class="{'vzer-radio-direction':direction=='vertical'}">
+      <div class="vzer-radio-cell" v-for="(option,index) in options" :key="index" @change="handleChange">
+        <input id="vzer-radio" class="vzer-radio-input" type="radio" :style="{width:width+'px',height:width+'px'}" v-model="currentValue" :disabled="option.disabled" :value="option.value || option" />
+        <label for="vzer-radio" class="vzer-radio-label" :style="{width:width-2+'px',height:width-2+'px','background-color':option.value==currentValue?backgroundColor:normalColor,'border':option.value==currentValue?'1px solid'+backgroundColor:'1px solid'+normalColor}" :class="{'vzer-radio-disabled':option.disabled}"></label>
+        <span class="vzer-radio-text" :style="{color:option.value==currentValue?backgroundColor:normalColor}">{{option.label}}</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -11,59 +15,39 @@ export default {
   componentName: "Radio",
   data() {
     return {
-      checked: false,
-      fillColor: "#ddd"
+      currentValue: this.value
     };
   },
   props: {
-    value: [Number, String],
-    label: String,
     width: {
       type: [Number, String],
-      default: 30
+      default: 20
     },
-    disabled: {
-      type: Boolean,
-      default: false
+    value: String,
+    options: {
+      type: Array,
+      required: true
+    },
+    direction: {
+      type: String,
+      default: "horizontal" //可选vertical垂直，默认horizontal水平
+    },
+    normalColor: {
+      type: String,
+      default: "#c8c9cc"
+    },
+    backgroundColor: {
+      type: String,
+      default: "#25c6fc"
     }
   },
   methods: {
-    changeChecked(e) {
-      console.log(e)
-      if (this.disabled) {
-        return;
-      }
-      if (
-        this.$parent &&
-        this.$parent.$options &&
-        this.$parent.$options.componentName === "RadioGroup"
-      ) {
-        this.$parent.handleChange();
-      } else {
-        this.$parent.$children.map(v => {
-          if (this.value == v.value) {
-            if (this.label == v.label) {
-              v.checked = true;
-              this.$emit("input", v.label);
-            } else {
-              v.checked = false;
-            }
-          }
-        });
-        this.$emit("change", this.value);
-      }
-    }
-  },
-  watch: {
-    checked(data) {
-      if (data) {
-        this.fillColor = "#25c6fc";
-      } else {
-        this.fillColor = "#ddd";
-      }
+    handleChange() {
+      this.$emit("input", this.currentValue).$emit("change", this.currentValue);
     }
   },
   created() {
+    console.log(this.backgroundColor)
     if (typeof this.width == "string" && this.width.indexOf("px") != -1) {
       this.width = this.width.split("px")[0];
     }
@@ -71,5 +55,46 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.vzer-radio {
+  display: inline-block;
+  .vzer-radio-list {
+    display: flex;
+    .vzer-radio-cell {
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      .vzer-radio-input {
+        position: absolute;
+        opacity: 0;
+        z-index: 999;
+        cursor: pointer;
+      }
+      .vzer-radio-label {
+        border-radius: 100%;
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: top;
+        // cursor: pointer;
+        text-align: center;
+        -webkit-transition: all 250ms ease;
+        transition: all 250ms ease;
+        outline: none;
+        box-shadow: inset 0 0 0 4px #f4f4f4;
+      }
+      .vzer-radio-disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .vzer-radio-text {
+        display: inline-block;
+      }
+    }
+  }
+  .vzer-radio-direction {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 </style>

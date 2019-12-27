@@ -13,7 +13,7 @@
     <div class="example-component-list-wrapepr">
       <routerLink to="/example_button" class="example-component-item-wrapper" @click="gotoButtonPage">
         <div>
-          <img src="@/assets/img/btn.png" alt="">
+          <img src="@/assets/img/button.png" alt="">
         </div>
         <div class="example-component-name">按钮</div>
       </routerLink>
@@ -34,7 +34,7 @@
       </routerLink>
       <routerLink to="/example_radio" class="example-component-item-wrapper">
         <div>
-          <img src="@/assets/img/checkbox_group.png" alt="">
+          <img src="@/assets/img/radio.png" alt="">
         </div>
         <div class="example-component-name">单选框</div>
       </routerLink>

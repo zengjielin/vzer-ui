@@ -77,4 +77,42 @@ v-model|绑定值|array|—|—
 :--:|:--:|:--:
 change|当绑定值变化时触发的事件|更新后的值
 
+# 表单组件-单选框
+## 使用案例
+```
+<vzer-radio v-model="radio" :options="options"></vzer-radio>
 
+<script>
+export default {
+  data() {
+    return {
+      radio: "optionA",
+      options: [
+        {
+          label: "选项一",
+          value: "optionA"
+        },
+        {
+          label: "选项二",
+          value: "optionB"
+        }
+      ],
+  }
+};
+</script>
+```
+
+## API
+参数|说明|类型|可选值|默认值
+:--:|:--:|:--:|:--:|:--:
+v-model|绑定值|String|—|—
+options|选择项，label为单选项文字,value为单选项值,disabled是否禁用单选项。|Array|—|—
+width|单选框大小|String/Number|—|20/20px
+direction|单选框排序方向|String|horizontal/vertical|horizontal
+normal-color|单选框未选中时颜色|String|—|#c8c9cc
+background-color|单选框选中时颜色|String|—|#25c6fc
+
+## Event
+参数|说明|回调参数
+:--:|:--:|:--:
+change|当绑定值变化时触发的事件|更新后的值
