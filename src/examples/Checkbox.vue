@@ -94,9 +94,8 @@ export default {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
-
     .vzer-checkbox {
-      margin: 5px ;
+      margin: 5px;
     }
   }
 }

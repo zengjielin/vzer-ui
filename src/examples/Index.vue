@@ -5,7 +5,7 @@
         <div class="freme-logo">
           <img src="@/assets/img/logo.png" alt="" srcset="">
         </div>
-        <div class="frame-intro">轻量、可靠的移动端Vue组件库</div>
+        <!-- <div class="frame-intro">轻量、可靠的移动端Vue组件库</div> -->
       </div>
     </div>
     <div class="example-header-title">基础组件</div>
@@ -36,6 +36,12 @@
           <img src="@/assets/img/radio.png" alt="">
         </div>
         <div class="example-component-name">单选框</div>
+      </routerLink>
+      <routerLink to="/example_switch" class="example-component-item-wrapper">
+        <div>
+          <img src="@/assets/img/switch.png" alt="">
+        </div>
+        <div class="example-component-name">开关</div>
       </routerLink>
     </div>
   </div>

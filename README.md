@@ -8,6 +8,9 @@
 ## 点击下方查看demo
 [在线演示地址](https://zengjielin.github.io/vzer-ui/dist/#/)
 
+## 喜欢自己动手开发属于自己的UI组件的可以移步到vzer-ui-template这个项目
+[vzer-ui-template](https://github.com/zengjielin/vzer-ui-template)
+
 ## 快速入门教程
 
 ``` bash
@@ -111,6 +114,35 @@ width|单选框大小|String/Number|—|20/20px
 direction|单选框排序方向|String|horizontal/vertical|horizontal
 normal-color|单选框未选中时颜色|String|—|#c8c9cc
 background-color|单选框选中时颜色|String|—|#25c6fc
+
+## Event
+参数|说明|回调参数
+:--:|:--:|:--:
+change|当绑定值变化时触发的事件|更新后的值
+
+# 表单组件-开关
+## 使用案例
+```
+<vzer-switch v-model="value"></vzer-switch>
+
+<script>
+export default {
+  data() {
+    return {
+      value: true,
+  }
+};
+</script>
+```
+## API
+参数|说明|类型|可选值|默认值
+:--:|:--:|:--:|:--:|:--:
+v-model|绑定值|boolean|—|—
+width|宽度|number/string|—|—
+height|高度，不宜大于他的宽度|number/string|—|—
+background-color|选中时的背景色|string|—|#25c6fc
+normal-color|选中时的背景色|string|—|#e9ebef
+disabled|是否禁用状态|boolean|—|false
 
 ## Event
 参数|说明|回调参数

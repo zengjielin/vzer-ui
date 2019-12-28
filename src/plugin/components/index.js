@@ -5,10 +5,12 @@ import Button from './button/Button.vue'
 import Checkbox from './checkbox/Checkbox.vue'
 import CheckboxGroup from './checkbox-group/CheckboxGroup.vue'
 import Radio from './radio/Radio.vue'
+import Switch from './switch/Switch.vue'
 
 export {
   Button,
   Checkbox,
   CheckboxGroup,
-  Radio
+  Radio,
+  Switch
 }
